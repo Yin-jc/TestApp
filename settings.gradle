@@ -1,3 +1,5 @@
+include ':appF'
 rootProject.name='TestApp'
 include ':appA',
-        ':appB'
+        ':appB',
+        ':appF'
