@@ -1,23 +1,17 @@
 package com.example.testapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.ComponentName;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.os.MemoryFile;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
-import android.widget.FrameLayout;
-
-import com.example.testapp.utils.HaierLogUtils;
 
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -78,8 +72,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }, BIND_AUTO_CREATE);*/
 
-        HaierLogUtils.i("111111111111111111111111", "Haier log info");
-        HaierLogUtils.i("我我我我我我我11", "Haier log info");
     }
 
     private ParcelFileDescriptor createMemoryFile() throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {

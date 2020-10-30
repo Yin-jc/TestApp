@@ -1,6 +1,5 @@
 package com.example.appc;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -23,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add("hello");
         linkedList.add("world");
 
-        Box<String> box = new Box<>();
-        box.setData("hello");
         finish();
     }
 
