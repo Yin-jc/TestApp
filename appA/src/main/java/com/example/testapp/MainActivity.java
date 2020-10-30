@@ -8,10 +8,9 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.MemoryFile;
-import android.os.Parcel;
 import android.os.ParcelFileDescriptor;
-import android.os.RemoteException;
 import android.util.Log;
+import android.widget.FrameLayout;
 
 import com.example.testapp.utils.HaierLogUtils;
 
@@ -67,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }, BIND_AUTO_CREATE);*/
 
-        bindService(intent, new ServiceConnection() {
+        /*bindService(intent, new ServiceConnection() {
             @Override
             public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
 
@@ -77,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             public void onServiceDisconnected(ComponentName componentName) {
 
             }
-        }, BIND_AUTO_CREATE);
+        }, BIND_AUTO_CREATE);*/
 
         HaierLogUtils.i("111111111111111111111111", "Haier log info");
         HaierLogUtils.i("我我我我我我我11", "Haier log info");

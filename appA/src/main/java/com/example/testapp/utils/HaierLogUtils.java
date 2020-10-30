@@ -1,6 +1,5 @@
 package com.example.testapp.utils;
 
-import android.text.TextUtils;
 import android.util.Log;
 
 import androidx.annotation.Size;

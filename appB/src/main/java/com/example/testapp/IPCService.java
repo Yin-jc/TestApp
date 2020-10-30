@@ -14,13 +14,9 @@ import androidx.annotation.Nullable;
 
 import com.example.testappB.IPerson;
 
-import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.channels.Channels;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 /**
