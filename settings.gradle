@@ -2,4 +2,7 @@ include ':appF'
 rootProject.name='TestApp'
 include ':appA',
         ':appB',
+        ':appC',
+        ':appD',
+        ':appE',
         ':appF'

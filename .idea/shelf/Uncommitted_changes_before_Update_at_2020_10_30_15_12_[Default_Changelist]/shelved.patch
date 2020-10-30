@@ -1,0 +1,17 @@
+Index: settings.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>rootProject.name='TestApp'\r\ninclude ':appA',\r\n        ':appB'\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- settings.gradle	(revision d9d8385f4be763d933988d1b0bd09f4042b15afc)
++++ settings.gradle	(date 1604041863523)
+@@ -1,3 +1,6 @@
+ rootProject.name='TestApp'
+ include ':appA',
+-        ':appB'
++        ':appB',
++        ':appC',
++        ':appD',
++        ':appE'
