@@ -2,6 +2,8 @@ package com.example.appf;
 
 import org.junit.Test;
 
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -93,7 +95,43 @@ public class ExampleUnitTest {
 
     @Test
     public void testGeneric6() {
-        GenericInherit.Father father = new GenericInherit.Father();
+//        GenericInherit.Father father = new GenericInherit.Father();
+        GenericInherit.Father father = new GenericInherit.Son();
+//        GenericInherit.Father father = new GenericInherit.Son2();
         GenericInherit.Son son = new GenericInherit.Son();
+
+        GenericInherit<GenericInherit.Father> fatherGenericInherit = new GenericInherit<>();
+        fatherGenericInherit.setData1(father);
+        fatherGenericInherit.setData1(son);
+
+        GenericInherit.SubGenericInherit<GenericInherit.Father> fatherSubGenericInherit = new GenericInherit.SubGenericInherit<>();
+        fatherSubGenericInherit.setData1(father);
+        fatherSubGenericInherit.setData1(son);
+
+        GenericInherit<GenericInherit.Son> sonGenericInherit = new GenericInherit<>();
+        sonGenericInherit.setData1((GenericInherit.Son) father);
+        sonGenericInherit.setData1(son);
+
+        GenericInherit.SubGenericInherit<GenericInherit.Son> sonSubGenericInherit = new GenericInherit.SubGenericInherit<>();
+        sonSubGenericInherit.setData1((GenericInherit.Son) father);
+        sonSubGenericInherit.setData1(son);
+    }
+
+    @Test
+    public void testGeneric7() {
+        GenericByWildcard genericByWildcard = new GenericByWildcard();
+        genericByWildcard.use();
+        genericByWildcard.useExtends();
+        genericByWildcard.useSuper();
+        genericByWildcard.useNone();
+    }
+
+    @Test
+    public void testGeneric8() {
+        //匿名内部类
+        GenericType<String> genericType = new GenericType<String>() {};
+        Type superclass = genericType.getClass().getGenericSuperclass();
+        Type type = ((ParameterizedType) superclass).getActualTypeArguments()[0];
+        System.out.println(type.getTypeName());
     }
 }

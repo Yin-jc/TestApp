@@ -21,7 +21,7 @@ public class GenericInherit<T> {
         this.data2 = data2;
     }
 
-    static class SubGenericInherit<T> extends GenericRestrict<T> {
+    static class SubGenericInherit<T> extends GenericInherit<T> {
 
     }
 
@@ -29,7 +29,11 @@ public class GenericInherit<T> {
 
     }
 
-    static class Son extends Father{
+    static class Son extends Father {
+
+    }
+
+    static class Son2 extends Father {
 
     }
 }
