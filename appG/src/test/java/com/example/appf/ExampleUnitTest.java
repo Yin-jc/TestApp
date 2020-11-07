@@ -28,6 +28,9 @@ public class ExampleUnitTest {
             synchronized (lock) {
                 try {
                     lock.wait(5000);
+                    while (true) {
+
+                    }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -60,12 +63,21 @@ public class ExampleUnitTest {
                 while (cnt < 5) {
                     cnt++;
                     try {
-                        Thread.sleep(500);
+                        Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
                 lock.notifyAll();
+                cnt = 0;
+                while (cnt < 5) {
+                    cnt++;
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         });
         t3.start();
