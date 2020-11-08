@@ -5,4 +5,5 @@ include ':appA',
         ':appD',
         ':appE',
         ':appF',
-        ':appG'
+        ':appG',
+        ':appH'
