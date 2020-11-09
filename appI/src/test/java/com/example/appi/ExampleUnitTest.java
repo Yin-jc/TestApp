@@ -7,6 +7,8 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 import static org.junit.Assert.*;
 
@@ -92,6 +94,12 @@ public class ExampleUnitTest {
                 test2.method3();
             }
         }).start();
+
+        StringBuffer buffer = new StringBuffer();
+        buffer.append(1);
+
+        Lock lock = new ReentrantLock();
+        lock.lock();
     }
 
 }
