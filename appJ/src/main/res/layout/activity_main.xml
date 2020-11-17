@@ -6,17 +6,17 @@
     android:focusableInTouchMode="true"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="按钮1" />
+    <com.example.appj.TestViewGroup
+        android:id="@+id/vg_test"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="按钮2" />
+        <com.example.appj.TestView
+            android:id="@+id/v_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </com.example.appj.TestViewGroup>
 
 </LinearLayout>
 

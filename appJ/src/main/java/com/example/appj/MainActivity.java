@@ -19,13 +19,16 @@ public class MainActivity extends AppCompatActivity {
     Button button1,button2;
     ViewGroup myLayout;
 
+    private ViewGroup mVGTest;
+    private View mVTest;
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button1 = findViewById(R.id.button1);
+        /*button1 = findViewById(R.id.button1);
         button2 = findViewById(R.id.button2);
         myLayout = (LinearLayout) findViewById(R.id.my_layout);
 
@@ -46,8 +49,23 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnTouchListener((v, event) -> {
             Log.d("TAG", "button2执行了onTouch(), 动作是:" + event.getAction());
             return true;
-        });
+        });*/
 
+        mVGTest = findViewById(R.id.vg_test);
+        mVTest = findViewById(R.id.v_test);
+
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        Log.e("TestActivity", "dispatchTouchEvent: " + ev.toString());
+        return super.dispatchTouchEvent(ev);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Log.e("TestActivity", "onTouchEvent: " + event.toString());
+        return super.onTouchEvent(event);
     }
 }
 
