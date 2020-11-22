@@ -39,16 +39,4 @@ public class ExampleUnitTest {
         String.main(new String[]{});
     }
 
-    @Test
-    public void testClassLoader4() {
-        CustomClassLoader loader = new CustomClassLoader();
-        loader.setRoot("/Users/miyokocxy/Downloads");
-        try {
-            Object o = loader.loadClass("com.example.custom.TestClassLoader").newInstance();
-            System.out.println(o.getClass().getClassLoader());
-        } catch (IllegalAccessException | InstantiationException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
 }
