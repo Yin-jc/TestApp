@@ -1,3 +1,4 @@
+/*
 package java.lang;
 
 public class String {
@@ -6,3 +7,4 @@ public class String {
         System.out.println("custom String main");
     }
 }
+*/
