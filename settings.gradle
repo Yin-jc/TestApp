@@ -9,4 +9,5 @@ include ':appA',
         ':appH',
         ':appI',
         ':appJ',
-        ':appL'
+        ':appL',
+        ':appM'
