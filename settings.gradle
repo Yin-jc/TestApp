@@ -12,4 +12,5 @@ include ':appA',
         ':appK',
         ':appL',
         ':appM',
-        ':appN'
+        ':appN',
+        ':appO'
