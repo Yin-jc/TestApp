@@ -1,0 +1,15 @@
+1.一个好的hashCode的方法的目标:
+    为不相等的对象产生不相等的散列码，减少hash冲突
+2.覆写equals时有哪些准则:
+    自反性：对于任何非空引用值 x，x.equals(x) 都应返回 true
+    对称性：对于任何非空引用值 x 和 y，当且仅当 y.equals(x) 返回 true 时，x.equals(y) 才应返回 true
+    传递性：对于任何非空引用值 x、y 和 z，如果 x.equals(y) 返回 true，并且 y.equals(z) 返回 true，那么 x.equals(z) 应返回 true
+    一致性：对于任何非空引用值 x 和 y，多次调用 x.equals(y) 始终返回 true 或始终返回 false，前提是对象上 equals 比较中所用的信息没有被修改
+    非空性：对于任何非空引用值 x，x.equals(null) 都应返回 false
+3.覆写equals方法:
+    使用==操作符检查“参数是否为这个对象的引用”：如果是对象本身，则直接返回，拦截了对本身调用的情况，算是一种性能优化
+    使用instanceof操作符检查“参数是否是正确的类型”：如果不是，就返回false，正如对称性和传递性举例子中说得，不要想着兼容别的类型，很容易出错。在实践中检查的类型多半是equals所在类的类型，或者是该类实现的接口的类型，比如Set、List、Map这些集合接口
+    把参数转化为正确的类型： 经历了上一步的检测，基本会成功
+    对于该类中的“关键域”，检查参数中的域是否与对象中的对应域相等：基本类型的域就用==比较，float域用Float.compare方法，double域用Double.compare方法，至于别的引用域，我们一般递归调用它们的equals方法比较，加上判空检查和对自身引用的检查，一般会写成这样：(field == o.field || (field != null && field.equals(o.field)))
+    检查是否满足上面提到的对称性，传递性，一致性等等
+
