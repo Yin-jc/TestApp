@@ -5,9 +5,12 @@ import org.junit.Test;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
@@ -141,5 +144,158 @@ public class ExampleUnitTest {
             System.out.println(str);
         }*/
     }
+
+    @Test
+    public void testHashMapTraversal() {
+        HashMap<Integer, String> map = new HashMap<>();
+        String s = map.put(1, "Hello");
+        String s2 = map.put(2, "World");
+
+        /**
+         * foreach迭代entry
+         */
+        for (Map.Entry<Integer, String> entry :
+                map.entrySet()) {
+            System.out.println("key = " + entry.getKey() + " value = " + entry.getValue());
+        }
+
+        /**
+         * foreach迭代key和value
+         */
+        for (int key :
+                map.keySet()) {
+            System.out.println("key = " + key);
+        }
+        for (String value :
+                map.values()) {
+            System.out.println("value = " + value);
+        }
+
+        /**
+         * iterator迭代
+         */
+        Iterator<Map.Entry<Integer, String>> iterator = map.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<Integer, String> entry = iterator.next();
+            System.out.println("key = " + entry.getKey() + " value = " + entry.getValue());
+        }
+    }
+
+    @Test
+    public void testLinkedHashMapTraversal() {
+        LinkedHashMap<Integer, String> map = new LinkedHashMap<>(16, 0.75f, true);
+        map.put(1, "Hello");
+        map.put(2, "World");
+        map.put(3, "Code");
+
+        map.get(2);
+
+        for (Map.Entry<Integer, String> entry :
+                map.entrySet()) {
+            System.out.println("key = " + entry.getKey() + " value = " + entry.getValue());
+        }
+    }
+
+    @Test
+    public void testArrayListTraversalTime() {
+        int count = 1000000;
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 0; i < count; i++) {
+            list.add("第" + i + "个元素");
+        }
+
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < count; i++) {
+            list.get(i);
+        }
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+    }
+
+    @Test
+    public void testArrayListTraversalTime2() {
+        int count = 1000000;
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 0; i < count; i++) {
+            list.add("第" + i + "个元素");
+        }
+
+        long start = System.currentTimeMillis();
+        for (String str :
+                list) {
+
+        }
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+    }
+
+    @Test
+    public void testArrayListTraversalTime3() {
+        int count = 1000000;
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 0; i < count; i++) {
+            list.add("第" + i + "个元素");
+        }
+
+        long start = System.currentTimeMillis();
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            iterator.next();
+        }
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+    }
+
+    @Test
+    public void testLinkedListTraversalTime() {
+        int count = 10000;
+        LinkedList<String> list = new LinkedList<>();
+        for (int i = 0; i < count; i++) {
+            list.add("第" + i + "个元素");
+        }
+
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < count; i++) {
+            list.get(i);
+        }
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+    }
+
+    @Test
+    public void testLinkedListTraversalTime2() {
+        int count = 1000000;
+        LinkedList<String> list = new LinkedList<>();
+        for (int i = 0; i < count; i++) {
+            list.add("第" + i + "个元素");
+        }
+
+        long start = System.currentTimeMillis();
+        for (String str :
+                list) {
+
+        }
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+    }
+
+    @Test
+    public void testLinkedListTraversalTime3() {
+        int count = 1000000;
+        LinkedList<String> list = new LinkedList<>();
+        for (int i = 0; i < count; i++) {
+            list.add("第" + i + "个元素");
+        }
+
+        long start = System.currentTimeMillis();
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            iterator.next();
+        }
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+    }
+
+
 
 }
